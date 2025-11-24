@@ -3,7 +3,7 @@
   "dependencies": {
     "R": [
       {
-        "name": "move"
+        "name": "move2"
       },
       {
         "name": "shiny"
@@ -12,7 +12,7 @@
         "name": "foreach"
       },
 	  {
-        "name": "fields"
+        "name": "sf"
       },
 	  {
 		"name": "geosphere"
