@@ -3,7 +3,7 @@
   "dependencies": {
     "R": [
       {
-        "name": "move"
+        "name": "move2"
       },
       {
         "name": "shiny"
@@ -12,7 +12,7 @@
         "name": "foreach"
       },
 	  {
-        "name": "fields"
+        "name": "sf"
       },
 	  {
 		"name": "geosphere"
@@ -51,6 +51,16 @@
   "email": "ascharf@ab.mpg.de",
   "roles": ["contributor"],
   "orcid": "0000-0002-3357-8533",
+  "affiliation": "Max-Planck-Institute of Animal Behavior",
+  "affiliationRor": "https://ror.org/026stee22"
+},
+{
+  "firstName": "Nafiseh",
+  "middleInitials": null,
+  "lastName": "Tavakol",
+  "email": "ntavakol@ab.mpg.de",
+  "roles": ["contributor"],
+  "orcid": "0000-0003-3674-4784",
   "affiliation": "Max-Planck-Institute of Animal Behavior",
   "affiliationRor": "https://ror.org/026stee22"
 }
