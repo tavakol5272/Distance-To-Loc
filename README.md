@@ -4,33 +4,55 @@ MoveApps
 
 Github repository: *github.com/movestore/Distance-To-Loc*
 
-
 ## Description
-Calculates the distance to a reference location and plots it for all individuals.
+Calculates the distance to a reference location and plots it for selected individuals.
 
 ## Documentation
-After downsampling your data, this App calculates the Vincenty ellipsoid distances in metres (R package geosphere) of all positions to the user-provided location. These distances are then plotted over time as lines (one per individual) in one plot. The reference location can be changed interactively.
+This app calculates the Vincenty ellipsoidal distance in metres (using the R package geosphere) from all positions to a user-defined reference location.
+These distances are then plotted over time as lines in a single plot (one line per individual). The reference location can be changed interactively.
+Users can download the plot as a PNG file and save the distance table as a CSV file using the download buttons.
 
-### Input data
-moveStack in Movebank format
+### Application scope
+#### Generality of App usability
+This App was developed for any taxonomic group. 
 
-### Output data
-Shiny user interface (UI)
+#### Required data properties
+The App should work for any kind of (location) data.
+
+### Input type
+`move2::move2_loc`
+
+### Output type
+`move2::move2_loc`
 
 ### Artefacts
-`distance_table.csv`: csv-file with Table of all individuals' distances to the specified location (incl. individual ID, timestamp, longitude, latitude). The file is only generated for the initial parameter settings.
+`distance_plot_lon_lat.png`:PNG file containing the distance–time plot for the selected individuals.
+
+`distance_table_lon_lat.csv`: CSV file containing the distances of the selected individuals to the specified location (incl: track ID, timestamp, longitude, latitude, and distance_to_location).
+
 
 ### Settings 
-`Longitude of Reference Location`: longitude of the location to which the distance for each data position is calculated.
+**Tracks**:
+`animals`: select the tracks to include.
+`select_all_animals`: button to select all tracks.
+`unselect_animals` : button to unselect all tracks.
 
-`Latitude of Reference Location`: latitude of the position to which the distance for each data position is calculated.
+**Reference Location**:
+`Longitude`: longitude of the reference location to which the distance for each data position is calculated. Coordinate has to be in EPSG:4326.
+`Latitude`: latitude of the reference location to which the distance for each data position is calculated. Coordinate has to be in EPSG:4326.
 
-`Update!`: click on this button to update the calculation after changing the coordinates of the reference position.
+**Buttons**:
+`Apply Changes`: click on this button to update the calculation after changing the tracks selection or coordinates of the reference position.
+`Download plot` : click on this button to download the png-file containing the plot for selected individuals.
+`Save Table(csv)` : click on this button to save the csv-file with table of selected individuals' distances to the specified reference location.
 
-### Null or error handling:
-**Setting `Longitude of Reference Location`:** This parameter defaults to 0, which is the Prime Meridian. It can be interactively changed in the UI.
+### Changes in output data
+The input data remains unchanged.
 
-**Setting `Latitude of Reference Location`:** This parameter defaults to 0, which is the Equator. It can be interactively changed in the UI.
+### Most common errors
 
-**Data:** The data are not manipulated in this App, but interactively explored. So that a possible Workflow can be continued after this App, the input data set is returned.
+### Null or error handling
 
+**Setting `Longitude of Reference Location`:** This parameter defaults to 0, which is the Prime Meridian. It can be interactively changed in the UI. It has to be a valid longitude in EPSG:4326
+
+**Setting `Latitude of Reference Location`:** This parameter defaults to 0, which is the Equator. It can be interactively changed in the UI. It has to be a valid latitude in EPSG:4326
